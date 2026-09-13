@@ -1,0 +1,9 @@
+{
+  "appId": "com.studytracker.app",
+  "appName": "StudyTracker",
+  "webDir": "www",
+  "server": {
+    "url": "https://tuphung.id.vn",
+    "cleartext": false
+  }
+}
