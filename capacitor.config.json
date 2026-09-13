@@ -3,7 +3,7 @@
   "appName": "StudyTracker",
   "webDir": "www",
   "server": {
-    "url": "https://dia-chi-web-cua-ban.com",
+    "url": "https://tuphung.id.vn",
     "cleartext": true
   },
   "plugins": {
