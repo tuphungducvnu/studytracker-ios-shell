@@ -23,7 +23,8 @@ jobs:
             echo '<!DOCTYPE html><html><head><title>App</title></head><body><h1>Loading...</h1></body></html>' > www/index.html
           fi
           rm -rf ios
-          npx cap add ios
+          # Ép Capacitor 8 sử dụng CocoaPods thay vì SPM để tương thích plugin GoogleAuth
+          npx cap add ios --packagemanager CocoaPods
           npx cap sync ios
 
       - name: Inject Configuration & URL Schemes
