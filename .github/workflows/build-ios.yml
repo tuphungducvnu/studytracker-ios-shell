@@ -16,11 +16,16 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Install dependencies & Sync Capacitor
+      - name: Install dependencies & Generate iOS Project
         run: |
           npm install
           mkdir -p www
-          npx cap sync ios
+          # Kiểm tra nếu chưa có thư mục ios thì khởi tạo mới
+          if [ ! -d "ios" ]; then
+            npx cap add ios
+          else
+            npx cap sync ios
+          fi
 
       - name: Install CocoaPods
         run: |
