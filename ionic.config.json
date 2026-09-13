@@ -1,6 +1,8 @@
 {
   "name": "StudyTracker",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "custom",
   "id": "988d0576"
 }
