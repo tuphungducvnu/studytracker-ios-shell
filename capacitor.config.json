@@ -8,9 +8,8 @@
   },
   "plugins": {
     "StatusBar": {
-      "overlaysWebView": false,
-      "style": "DARK",
-      "backgroundColor": "#FAF6EE"
+      "overlaysWebView": true,
+      "style": "DARK"
     },
     "GoogleAuth": {
       "scopes": ["profile", "email"],
