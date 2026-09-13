@@ -3,7 +3,15 @@
   "appName": "StudyTracker",
   "webDir": "www",
   "server": {
-    "url": "https://tuphung.id.vn",
-    "cleartext": false
+    "url": "https://dia-chi-web-cua-ban.com",
+    "cleartext": true
+  },
+  "plugins": {
+    "GoogleAuth": {
+      "scopes": ["profile", "email"],
+      "serverClientId": "451674634635-gb9h2l4nueepnuuj7efts3cmen73st1e.apps.googleusercontent.com",
+      "iosClientId": "451674634635-ajjhec6p2k7vmf9t13rcbhbd3quu9hrg.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
+    }
   }
 }
