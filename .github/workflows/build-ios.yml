@@ -40,6 +40,10 @@ jobs:
           PLIST_PATH="ios/App/App/Info.plist"
           plutil -insert CFBundleURLTypes -xml "<array><dict><key>CFBundleURLSchemes</key><array><string>$REVERSED_ID</string></array></dict></array>" "$PLIST_PATH" || true
 
+          # 4. Tiêm cấu hình màu thanh trạng thái tối tương phản (Dark Content)
+          plutil -replace UIStatusBarStyle -string "UIStatusBarStyleDarkContent" "$PLIST_PATH" || plutil -insert UIStatusBarStyle -string "UIStatusBarStyleDarkContent" "$PLIST_PATH"
+          plutil -replace UIViewControllerBasedStatusBarAppearance -bool NO "$PLIST_PATH" || plutil -insert UIViewControllerBasedStatusBarAppearance -bool NO "$PLIST_PATH"
+
       - name: Build Unsigned App
         run: |
           cd ios/App
