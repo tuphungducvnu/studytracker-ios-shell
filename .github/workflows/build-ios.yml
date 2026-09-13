@@ -14,22 +14,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
 
-      - name: Install Dependencies & Setup iOS Platform
+      - name: Prepare Web Assets and Capacitor iOS
         run: |
           npm install
-          npm install @capacitor/ios
+          npm install @capacitor/core @capacitor/cli @capacitor/ios
           mkdir -p www
-          # Xóa thư mục ios rỗng nếu có để khởi tạo sạch
+          if [ ! -f "www/index.html" ]; then
+            echo '<!DOCTYPE html><html><head><title>App</title></head><body><h1>Loading...</h1></body></html>' > www/index.html
+          fi
           rm -rf ios
           npx cap add ios
           npx cap sync ios
-
-      - name: Install CocoaPods
-        run: |
-          cd ios/App
-          pod install
 
       - name: Build Unsigned App
         run: |
